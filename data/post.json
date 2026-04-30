@@ -1,0 +1,17 @@
+{
+  "posts": [
+    {
+      "id": "mJMkiTy1T-s",
+      "title": "asd",
+      "content": "qqweqwe",
+      "postedTime": 30
+    },
+    {
+      "id": "0fBE-znxCTI",
+      "title": "hello World",
+      "content": "I love got chi mu\n",
+      "postedTime": 30
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
