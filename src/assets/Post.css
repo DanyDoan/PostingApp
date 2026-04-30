@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 50px;
+    margin: 10px;
     gap: 50px;
 }
 
@@ -10,16 +10,17 @@
     position: relative;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 #mainPost form * {
     width: 10em;
     height: 2em;
+
 }
 
 #mainPost input+label {
     position: relative;
-    left: 10px;
     top: -25px;
     background-color: rgb(255, 255, 255);
     color: rgba(128, 128, 128, 0.808);
@@ -31,10 +32,35 @@
 
 #mainPost input:focus+label,
 #mainPost input:valid+label {
-    left: 10px;
     top: -40px;
 }
 
+#mainPost textarea{
+    width: 20em;
+    height: 10em;
+    padding:10px;
+    text-align: center;
+}
+
+#mainPost .postButton{
+    height: fit-content;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 10px;
+    background-color: rgb(29, 172, 0);
+    color: white;
+    cursor: pointer;
+    transition-duration: 0.5s;
+}
+
+#mainPost .postButton:hover {
+    position: relative;
+    border: 1px dashed rgb(29, 172, 0);
+    border-radius: 20px;
+    background-color: white;
+    color: rgb(29, 172, 0);
+}
 
 #postList {
     display: flex;
@@ -86,23 +112,47 @@
 
 .postImage {
     grid-area: postImage;
-    width: 100%;
-    height: 100%;
-    padding: 10px;
+    width: 90%;
+    margin: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
     box-sizing: border-box;
 }
 
 .postTimestamp {
-
     grid-area: postTimestamp;
     font-size: 12px;
     color: rgb(71, 71, 74);
     padding: 10px;
     box-sizing: border-box;
+    display: flex;
+    align-self: flex-start;
+    justify-self: start;
+    align-items: start;
+    justify-items: start;
 }
 
 .postDetail {
     grid-area: postDetail;
     padding: 10px;
     box-sizing: border-box;
+}
+
+.deleteButton {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 10px;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    transition-duration: 0.5s;
+}
+
+.deleteButton:hover {
+    position: relative;
+    border: 1px dashed red;
+    border-radius: 20px;
+    background-color: white;
+    color: red;
 }

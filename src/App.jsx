@@ -17,7 +17,17 @@ function App() {
   // API url
   const API_URL = "http://localhost:3500/posts"
 
+  const date = new Date();
+  const toDay = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
+  const [post, setPost] = useState({
+    id: 0,
+    title: "",
+    content: "",
+    imgUrl: "/src/img/news.png",
+    postedTime: toDay,
+  })
   const [postList, setPostList] = useState([]);
+
   const [isLoading, setIsLoading] = useState(true);
   const [isFail, setIsFail] = useState(false);
 
@@ -45,8 +55,8 @@ function App() {
         setIsLoading(false);
       }
     }
-    setTimeout(() => getPostList(), 5000);
-  }, [])
+    setTimeout(() => getPostList(), 500);
+  }, [post])
 
   useEffect(() => {
     setSearchResult(postList);
@@ -55,12 +65,12 @@ function App() {
   return (
     <Router>
       <Header />
-      <Nav 
-      searchValue={searchValue} setSearchValue={setSearchValue} 
-      setSearchResult={setSearchResult} postList={postList}/>
+      <Nav
+        searchValue={searchValue} setSearchValue={setSearchValue}
+        setSearchResult={setSearchResult} postList={postList} />
 
       <Routes>
-        <Route path="/post" element={<Post />} />
+        <Route path="/post" element={<Post post={post} setPost={setPost} toDay={toDay}/>} />
         <Route path="/post/:id" element={<PostPage />} />
         <Route path="/about" element={<About />} />
         <Route path="*" element={<Home postList={searchResult} isLoading={isLoading} isFail={isFail} />} />

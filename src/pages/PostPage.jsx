@@ -64,8 +64,9 @@ function PostPage() {
             <p className="postTimestamp">Posted time: {post.postedTime}</p>
             <div className="postDetail">
                 <h2>{post.title}</h2>
-                <p>Post content: {post.content}</p>
-                <button onClick={() => deletePost()}>
+                <br/>
+                <p>{post.content}</p>
+                <button className="deleteButton" onClick={() => deletePost()}>
                     Delete
                 </button>
             </div>
