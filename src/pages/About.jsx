@@ -1,8 +1,9 @@
 function About(){
 
     return(
-        <main>
-            <h1>I'm About</h1>
+        <main id="mainAbout">
+            <h1>This is my super duper mini project, a test on my way to learn ReactJS</h1>
+            <p className="timestamp">30/4/2026</p>
         </main>
     )
 }

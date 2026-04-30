@@ -1,11 +1,22 @@
 import {FaSearch} from "react-icons/fa"
 
-function NavSearch(){
+function NavSearch({searchValue, setSearchValue, setSearchResult, postList}){
+
+    const search = (e) => {
+        e.preventDefault();
+
+        const result = postList.filter((post) => post.title.toLowerCase().includes(searchValue.toLowerCase()))
+        setSearchResult(result);
+    }
 
     return(
-        <form>
-            <input type="text"/>
-            <FaSearch/>
+        <form onSubmit={(e) => search(e)}>
+            <input 
+            type="text"
+            value={searchValue}
+            onChange={(e) => {setSearchValue(e.target.value); search(e)}}
+            />
+            <button type="submit" className="searchButton"><FaSearch/></button>
         </form>
     )
 }

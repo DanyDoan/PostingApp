@@ -1,16 +1,25 @@
 {
   "posts": [
     {
-      "id": "mJMkiTy1T-s",
-      "title": "asd",
-      "content": "qqweqwe",
-      "postedTime": 30
+      "id": "LV5LHJhCRVM",
+      "title": "What is Lorem Ipsum?",
+      "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      "imgUrl": "/src/img/news.png",
+      "postedTime": "30/3/2026"
     },
     {
-      "id": "0fBE-znxCTI",
-      "title": "hello World",
-      "content": "I love got chi mu\n",
-      "postedTime": 30
+      "id": "UqWToR6KQAE",
+      "title": "Tranh cãi vì Arsenal bị tước phạt đền trước Atletico",
+      "content": "\nPhút 81, từ đường chuyền của Bukayo Saka, Eberechi Eze cố rướn người đẩy bóng rồi va chạm với trung vệ David Hancko rồi ngã trong vòng cấm. Tình huống có tiếp xúc rõ ràng và Arsenal ban đầu được hưởng phạt đền.\n\nTuy nhiên, VAR đã can thiệp, đề nghị trọng tài Danny Makkelie xem lại băng hình. Sau nhiều lần xem lại, Makkelie quyết định hủy phạt đền, khiến trận đấu khép lại với tỷ số hòa 1-1.",
+      "imgUrl": "/src/img/news.png",
+      "postedTime": "30/3/2026"
+    },
+    {
+      "id": "-3SMe4D1hso",
+      "title": "Trump warns Iran 'better get smart soon' as he weighs military options over Strait of Hormuz",
+      "content": "Members of Trump’s national security team presented him with multiple options this week for how to handle the continuing bottleneck in the strait after negotiations failed to reopen the critical waterway, a U.S. official and a person familiar with the meeting told NBC News.\n\nThe standoff between Washington and Tehran, including the continued U.S. naval blockade, means the key trade route has been effectively blocked for two months.",
+      "imgUrl": "/src/img/news.png",
+      "postedTime": "30/3/2026"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

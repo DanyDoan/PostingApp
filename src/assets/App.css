@@ -38,7 +38,7 @@ nav button:hover{
 }
 footer{
     background-color: grey;
-    min-height: 5em;
+    min-height: 4em;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -46,5 +46,4 @@ footer{
 
 main{
     flex-grow: 1;
-    min-height: max-content;
 }

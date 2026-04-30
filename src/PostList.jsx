@@ -6,7 +6,7 @@ function PostList({postList}){
     return(
         <div id="postList">
             {postList.map((post) => (
-                <PostLine title={post.title} content={post.content} postedTime={post.postedTime}/>
+                <PostLine id={post.id} title={post.title} content={post.content} postedTime={post.postedTime}/>
             ))}
         </div>
     )

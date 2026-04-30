@@ -10,7 +10,8 @@ function Post() {
         id: 0,
         title: "",
         content: "",
-        postedTime: toDay.getDate(),
+        imgUrl: "./img/news.png",
+        postedTime: toDay.getDate() + "/" + toDay.getMonth() + "/" + toDay.getFullYear(),
     })
 
     const uploadPost = async (e) => {
@@ -26,7 +27,7 @@ function Post() {
             }
 
             const response = await fetch(API_URL, request);
-            
+
             const result = await response.json();
         } catch (e) {
             alert(e);
@@ -36,16 +37,14 @@ function Post() {
             id: 0,
             title: "",
             content: "",
-            postedTime: toDay.getDate(),
+            imgUrl: "./img/news.png",
+            postedTime: toDay.getDate() + "/" + toDay.getMonth() + "/" + toDay.getFullYear(),
         })
     }
 
-
-
-
     return (
-        <main>
-            <h1>I'm Post</h1>
+        <main id="mainPost">
+            <h1>Something new happens?</h1>
             <form onSubmit={(e) => uploadPost(e)}>
                 <input
                     type="text"
@@ -62,9 +61,7 @@ function Post() {
                     required
                     onChange={(e) => setPost({ ...post, content: e.target.value })}
                 />
-                <label>
-                    Content
-                </label>
+
                 <button type="submit">Submit</button>
             </form>
         </main>

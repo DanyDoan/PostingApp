@@ -1,11 +1,50 @@
-#postList{
+#mainPost {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px;
+    gap: 50px;
+}
+
+#mainPost form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+#mainPost form * {
+    width: 10em;
+    height: 2em;
+}
+
+#mainPost input+label {
+    position: relative;
+    left: 10px;
+    top: -25px;
+    background-color: rgb(255, 255, 255);
+    color: rgba(128, 128, 128, 0.808);
+    width: fit-content;
+    height: fit-content;
+    font-weight: bold;
+    transition-duration: 0.2s;
+}
+
+#mainPost input:focus+label,
+#mainPost input:valid+label {
+    left: 10px;
+    top: -40px;
+}
+
+
+#postList {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.postLine{
+
+.postLine {
     height: 8em;
-    width: 30em;
+    width: 80%;
     margin: 10px;
     border: 5px solid white;
     padding: 10px;
@@ -14,17 +53,56 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    text-decoration: none;
 }
 
-.postLine h2{
-    color: white
+.postLine h2 {
+    color: white;
+    font-size: 20px;
 }
 
-.postLine p{
-    color: red
+.postLine p {
+    color: red;
+    font-size: 12px;
 }
 
-.postLine .timestamp{
+.postLine .timestamp,
+.timestamp {
     font-size: 10px;
     color: rgb(71, 71, 74)
+}
+
+#mainPostPage {
+    margin: 0px;
+    box-sizing: border-box;
+    background-color: rgb(255, 255, 255);
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-areas:
+        "postImage postDetail"
+        "postTimestamp postDetail"
+    ;
+}
+
+.postImage {
+    grid-area: postImage;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.postTimestamp {
+
+    grid-area: postTimestamp;
+    font-size: 12px;
+    color: rgb(71, 71, 74);
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.postDetail {
+    grid-area: postDetail;
+    padding: 10px;
+    box-sizing: border-box;
 }
