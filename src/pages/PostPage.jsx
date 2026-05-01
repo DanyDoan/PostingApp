@@ -1,18 +1,12 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useHi } from "react"
 
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
-function PostPage() {
+function PostPage({post, setPost}) {
 
+    const navigate = useNavigate();
     const { id } = useParams();
     const API_URL = `http://localhost:3500/posts/${id}`
-
-    const [post, setPost] = useState({
-        id: id,
-        title: "",
-        content: "",
-        postedTime: "",
-    })
 
     useEffect(() => {
         const fetchPost = async () => {
@@ -35,7 +29,7 @@ function PostPage() {
             }
         }
         fetchPost();
-    })
+    }, [])
 
     const deletePost = async () => {
         try {
@@ -50,13 +44,11 @@ function PostPage() {
             if (!response.ok) throw Error("Error in fetching");
 
             const result = await response.json();
-            window.location.href = "../"
+            navigate("/");
         } catch (e) {
             alert(e);
         }
     }
-
-
 
     return (
         <main id="mainPostPage">

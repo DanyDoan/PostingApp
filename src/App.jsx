@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 import Header from "./Header.jsx";
 import Nav from "./Nav.jsx"
@@ -19,15 +19,16 @@ function App() {
 
   const date = new Date();
   const toDay = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
-  const [post, setPost] = useState({
+  const cleanPost = {
     id: 0,
     title: "",
-    content: "",
+    content: "dumaClean",
     imgUrl: "/src/img/news.png",
     postedTime: toDay,
-  })
-  const [postList, setPostList] = useState([]);
+  }
 
+  const [post, setPost] = useState(cleanPost)
+  const [postList, setPostList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isFail, setIsFail] = useState(false);
 
@@ -55,29 +56,30 @@ function App() {
         setIsLoading(false);
       }
     }
-    setTimeout(() => getPostList(), 500);
+    setTimeout(() => getPostList(), 1000);
   }, [post])
+
 
   useEffect(() => {
     setSearchResult(postList);
   }, [postList])
 
   return (
-    <Router>
+    <>
       <Header />
       <Nav
         searchValue={searchValue} setSearchValue={setSearchValue}
         setSearchResult={setSearchResult} postList={postList} />
 
       <Routes>
-        <Route path="/post" element={<Post post={post} setPost={setPost} toDay={toDay}/>} />
-        <Route path="/post/:id" element={<PostPage />} />
+        <Route path="/post" element={<Post toDay={toDay} post={post} setPost={setPost} cleanPost={cleanPost} />} />
+        <Route path="/post/:id" element={<PostPage post={post} setPost={setPost} />} />
         <Route path="/about" element={<About />} />
         <Route path="*" element={<Home postList={searchResult} isLoading={isLoading} isFail={isFail} />} />
       </Routes>
 
       <Footer />
-    </Router>
+    </>
   )
 }
 

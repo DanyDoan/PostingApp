@@ -4,8 +4,8 @@ function NavButton({tag}){
 
 
     return(
-        <button className="navButton">
-            <Link to={tag.toLowerCase()} style={{textDecoration: "none", color: "black"}}>{tag}</Link>
+        <button >
+            <Link to={tag.toLowerCase()} className="navLink">{tag}</Link>
         </button>
     )
 }

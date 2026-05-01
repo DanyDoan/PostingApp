@@ -15,7 +15,8 @@ function NavSearch({searchValue, setSearchValue, setSearchResult, postList}){
             type="text"
             value={searchValue}
             onChange={(e) => {setSearchValue(e.target.value); search(e)}}
-            />
+            placeholder="Seach post"
+            class="searchInput"/>
             <button type="submit" className="searchButton"><FaSearch/></button>
         </form>
     )

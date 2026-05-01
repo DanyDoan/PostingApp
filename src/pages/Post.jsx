@@ -2,13 +2,22 @@ import { useState, useEffect, useRef } from "react"
 import { useNavigate } from "react-router-dom";
 import { BiLogoTripAdvisor } from "react-icons/bi";
 
-function Post({ post, setPost, toDay }) {
-
+function Post({ toDay, post, setPost }) {
+    console.log("render")
     const API_URL = "http://localhost:3500/posts"
 
     const [status, setStatus] = useState("idle");
-
     const navigate = useNavigate();
+
+    useEffect(() => {
+        setPost({
+            id: 0,
+            title: "",
+            content: "",
+            imgUrl: "/src/img/news.png",
+            postedTime: toDay,
+        });
+    }, []);
 
     const uploadPost = async (e) => {
         e.preventDefault();
@@ -25,20 +34,18 @@ function Post({ post, setPost, toDay }) {
 
             const response = await fetch(API_URL, request);
             const result = await response.json();
-                    const timer = setTimeout(() => { setStatus("success") }, 2000);
+            const timer = setTimeout(() => { setStatus("success") }, 2000);
 
         } catch (e) {
             setStatus("Connection failed.");
         }
-
         setPost({
             id: 0,
             title: "",
             content: "",
             imgUrl: "/src/img/news.png",
             postedTime: toDay,
-        })
-
+        });
     }
 
     return (

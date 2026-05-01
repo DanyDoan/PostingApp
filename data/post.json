@@ -13,6 +13,13 @@
       "content": "Members of Trump’s national security team presented him with multiple options this week for how to handle the continuing bottleneck in the strait after negotiations failed to reopen the critical waterway, a U.S. official and a person familiar with the meeting told NBC News.\n\nThe standoff between Washington and Tehran, including the continued U.S. naval blockade, means the key trade route has been effectively blocked for two months.",
       "imgUrl": "/src/img/news.png",
       "postedTime": "30/3/2026"
+    },
+    {
+      "id": "H36MhCOlYWk",
+      "title": "Trump warns Iran 'better get smart soon' as he weighs military options over Strait of Hormuz",
+      "content": "Members of Trump’s national security team presented him with multiple options this week for how to handle the continuing bottleneck in the strait after negotiations failed to reopen the critical waterway, a U.S. official and a person familiar with the meeting told NBC News.\n\nThe standoff between Washington and Tehran, including the continued U.S. naval blockade, means the key trade route has been effectively blocked for two months.",
+      "imgUrl": "/src/img/news.png",
+      "postedTime": "30/3/2026"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

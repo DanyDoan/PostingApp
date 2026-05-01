@@ -1,42 +1,67 @@
-*{
+* {
     margin: 0px;
     padding: 0px;
-    font-family: Arial, Helvetica, sans-serif;    
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-#root{
-    background-color: rgb(255, 255, 255);
-    display:flex;
+#root {
+    min-height: 100svh;
+    display: flex;
     flex-direction: column;
-    min-height: 100svh
+    background-color: rgb(255, 255, 255);
 }
 
-header{ 
+header {
+    min-height: 5em;
     padding: 10px;
     box-sizing: border-box;
     background-color: rgb(0, 0, 126);
     color: white;
-    min-height: 5em;
 }
-nav{
-    padding: 5px;
-    background-color: #fff08b;
-    min-height: 2em;
+
+nav {
+    width: 100%;
+    min-height: fit-content;
+    padding: 10px 5px;
+    background-color: #000000;
     display: flex;
     flex-direction: column;
+    row-gap: 10px;
+    box-sizing: border-box;
 }
 
-nav button{
+nav .searchInput{
+    width: 15em;
+    padding: 3px;
+    box-sizing: border-box;
+}
+nav button {
     width: 5em;
-    background-color: bisque;
+    padding: 0px 10px;
+    background-color: rgba(0, 0, 0, 0);
     cursor: pointer;
     transition-duration: 0.2s;
+    color: white;
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(255, 255, 255, 0);
+    border-top: none;
+    border-right: none;
+    border-left: none;
 }
 
-nav button:hover{
-    transform: scale(1.1);
+nav button:hover {
+    /* transform: scale(1); */
+    border-color: white;
 }
-footer{
+
+.navLink {
+    color: white;
+    text-decoration: none;
+}
+
+footer {
     background-color: grey;
     min-height: 4em;
     display: flex;
@@ -44,6 +69,6 @@ footer{
     align-items: center;
 }
 
-main{
+main {
     flex-grow: 1;
 }

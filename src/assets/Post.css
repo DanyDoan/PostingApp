@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     margin: 10px;
-    gap: 50px;
+    gap: 30px;
 }
 
 #mainPost form {
@@ -14,35 +14,63 @@
 }
 
 #mainPost form * {
-    width: 10em;
-    height: 2em;
+    background-color: rgba(255, 255, 255, 0);
+    margin: 10px;
+    width: 20em;
+    height: 3em;
+    z-index: 1;
+    box-sizing: border-box;
+}
+
+#mainPost form input {
+    outline: none;
+    border: 2px solid rgb(4, 0, 107);
+    transition-duration: 1s;
 
 }
 
-#mainPost input+label {
-    position: relative;
-    top: -25px;
-    background-color: rgb(255, 255, 255);
-    color: rgba(128, 128, 128, 0.808);
+#mainPost textarea {
+    width: 30em;
+    height: 10em;
+    border: 2px solid rgb(4, 0, 107);
+    padding: 10px;
+    outline: none;
+    text-align: center;
+    transition-duration: 1s;
+}
+
+#mainPost label {
     width: fit-content;
     height: fit-content;
+    border: 1px solid rgb(255, 255, 255);
+    padding: 0px 10px;
+    position: absolute;
+    top: 10px;
+    background-color: rgb(255, 255, 255);
+    color: rgba(128, 128, 128, 0.808);
     font-weight: bold;
-    transition-duration: 0.2s;
+    transition-duration: 0.5s;
+    z-index: 0;
 }
 
 #mainPost input:focus+label,
 #mainPost input:valid+label {
-    top: -40px;
+    border: 2px solid rgb(4, 0, 107);
+    border-top: none;
+    border-bottom: none;
+    border-radius: 10px;
+    background-color: rgb(4, 0, 107);
+    color: rgb(255, 255, 255);
+    transform: translateY(-20px);
+    z-index: 2;
 }
 
-#mainPost textarea{
-    width: 20em;
-    height: 10em;
-    padding:10px;
-    text-align: center;
+#mainPost input:focus,
+#mainPost textarea:focus {
+    border-radius: 10px;
 }
 
-#mainPost .postButton{
+#mainPost .postButton {
     height: fit-content;
     margin: 10px;
     padding: 10px;
@@ -60,99 +88,4 @@
     border-radius: 20px;
     background-color: white;
     color: rgb(29, 172, 0);
-}
-
-#postList {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.postLine {
-    height: 8em;
-    width: 80%;
-    margin: 10px;
-    border: 5px solid white;
-    padding: 10px;
-    background-color: rgba(128, 128, 128, 0.425);
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    text-decoration: none;
-}
-
-.postLine h2 {
-    color: white;
-    font-size: 20px;
-}
-
-.postLine p {
-    color: red;
-    font-size: 12px;
-}
-
-.postLine .timestamp,
-.timestamp {
-    font-size: 10px;
-    color: rgb(71, 71, 74)
-}
-
-#mainPostPage {
-    margin: 0px;
-    box-sizing: border-box;
-    background-color: rgb(255, 255, 255);
-    display: grid;
-    grid-template-columns: repeat(2, 50%);
-    grid-template-areas:
-        "postImage postDetail"
-        "postTimestamp postDetail"
-    ;
-}
-
-.postImage {
-    grid-area: postImage;
-    width: 90%;
-    margin: 10px;
-    border: 1px solid black;
-    border-radius: 10px;
-    box-sizing: border-box;
-}
-
-.postTimestamp {
-    grid-area: postTimestamp;
-    font-size: 12px;
-    color: rgb(71, 71, 74);
-    padding: 10px;
-    box-sizing: border-box;
-    display: flex;
-    align-self: flex-start;
-    justify-self: start;
-    align-items: start;
-    justify-items: start;
-}
-
-.postDetail {
-    grid-area: postDetail;
-    padding: 10px;
-    box-sizing: border-box;
-}
-
-.deleteButton {
-    margin: 10px;
-    padding: 10px;
-    border: 1px solid white;
-    border-radius: 10px;
-    background-color: red;
-    color: white;
-    cursor: pointer;
-    transition-duration: 0.5s;
-}
-
-.deleteButton:hover {
-    position: relative;
-    border: 1px dashed red;
-    border-radius: 20px;
-    background-color: white;
-    color: red;
 }
